@@ -34,8 +34,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFuncionalidades));
             this.tbAgregarProd = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabelConex = new System.Windows.Forms.ToolStripStatusLabel();
             this.mrcDatos = new System.Windows.Forms.GroupBox();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.txtStock = new System.Windows.Forms.TextBox();
@@ -70,21 +68,23 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.tbReportes = new System.Windows.Forms.TabPage();
             this.cbReporte = new System.Windows.Forms.GroupBox();
+            this.chartInventario = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cboTipoReporte = new System.Windows.Forms.ComboBox();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.btnGenerar = new System.Windows.Forms.Button();
-            this.chartInventario = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabelConex = new System.Windows.Forms.ToolStripStatusLabel();
             this.tbAgregarProd.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             this.mrcDatos.SuspendLayout();
             this.tbBusquedas.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tbReportes.SuspendLayout();
             this.cbReporte.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartInventario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbAgregarProd
@@ -93,7 +93,7 @@
             this.tbAgregarProd.Controls.Add(this.tabPage1);
             this.tbAgregarProd.Controls.Add(this.tbBusquedas);
             this.tbAgregarProd.Controls.Add(this.tbReportes);
-            this.tbAgregarProd.Location = new System.Drawing.Point(115, 34);
+            this.tbAgregarProd.Location = new System.Drawing.Point(96, 40);
             this.tbAgregarProd.Name = "tbAgregarProd";
             this.tbAgregarProd.SelectedIndex = 0;
             this.tbAgregarProd.Size = new System.Drawing.Size(957, 507);
@@ -102,7 +102,6 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Gray;
-            this.tabPage1.Controls.Add(this.statusStrip1);
             this.tabPage1.Controls.Add(this.mrcDatos);
             this.tabPage1.Controls.Add(this.btnAgregar);
             this.tabPage1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -112,25 +111,6 @@
             this.tabPage1.Size = new System.Drawing.Size(949, 478);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Agregar Productos";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabelConex});
-            this.statusStrip1.Location = new System.Drawing.Point(-7, 523);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(168, 26);
-            this.statusStrip1.TabIndex = 3;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabelConex
-            // 
-            this.toolStripStatusLabelConex.Name = "toolStripStatusLabelConex";
-            this.toolStripStatusLabelConex.Size = new System.Drawing.Size(151, 20);
-            this.toolStripStatusLabelConex.Text = "toolStripStatusLabel1";
             // 
             // mrcDatos
             // 
@@ -522,6 +502,22 @@
             this.cbReporte.TabStop = false;
             this.cbReporte.Text = "Reporte";
             // 
+            // chartInventario
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartInventario.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartInventario.Legends.Add(legend1);
+            this.chartInventario.Location = new System.Drawing.Point(344, 34);
+            this.chartInventario.Name = "chartInventario";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartInventario.Series.Add(series1);
+            this.chartInventario.Size = new System.Drawing.Size(492, 368);
+            this.chartInventario.TabIndex = 4;
+            this.chartInventario.Text = "chart1";
+            // 
             // cboTipoReporte
             // 
             this.cboTipoReporte.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -553,27 +549,29 @@
             this.btnGenerar.UseVisualStyleBackColor = false;
             this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
-            // chartInventario
+            // statusStrip1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartInventario.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartInventario.Legends.Add(legend1);
-            this.chartInventario.Location = new System.Drawing.Point(344, 34);
-            this.chartInventario.Name = "chartInventario";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartInventario.Series.Add(series1);
-            this.chartInventario.Size = new System.Drawing.Size(492, 368);
-            this.chartInventario.TabIndex = 4;
-            this.chartInventario.Text = "chart1";
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabelConex});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 593);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1133, 26);
+            this.statusStrip1.TabIndex = 4;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabelConex
+            // 
+            this.toolStripStatusLabelConex.Name = "toolStripStatusLabelConex";
+            this.toolStripStatusLabelConex.Size = new System.Drawing.Size(151, 20);
+            this.toolStripStatusLabelConex.Text = "toolStripStatusLabel1";
             // 
             // frmFuncionalidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1133, 619);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tbAgregarProd);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmFuncionalidades";
@@ -581,9 +579,6 @@
             this.Load += new System.EventHandler(this.frmFuncionalidades_Load);
             this.tbAgregarProd.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.mrcDatos.ResumeLayout(false);
             this.mrcDatos.PerformLayout();
             this.tbBusquedas.ResumeLayout(false);
@@ -593,9 +588,12 @@
             this.groupBox2.PerformLayout();
             this.tbReportes.ResumeLayout(false);
             this.cbReporte.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartInventario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -603,8 +601,6 @@
 
         private System.Windows.Forms.TabControl tbAgregarProd;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelConex;
         private System.Windows.Forms.GroupBox mrcDatos;
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.TextBox txtStock;
@@ -643,5 +639,7 @@
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.Button btnGenerar;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartInventario;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelConex;
     }
 }
